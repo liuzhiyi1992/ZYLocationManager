@@ -13,6 +13,8 @@
 		480013EA1D37A48E00D443C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 480013E81D37A48E00D443C1 /* Main.storyboard */; };
 		480013EC1D37A48E00D443C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 480013EB1D37A48E00D443C1 /* Assets.xcassets */; };
 		480013EF1D37A48E00D443C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 480013ED1D37A48E00D443C1 /* LaunchScreen.storyboard */; };
+		480013F91D37A63000D443C1 /* ZYLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 480013F81D37A63000D443C1 /* ZYLocationManager.m */; };
+		480013FB1D37A78D00D443C1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 480013FA1D37A78D00D443C1 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,9 @@
 		480013EB1D37A48E00D443C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		480013EE1D37A48E00D443C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		480013F01D37A48E00D443C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		480013F71D37A63000D443C1 /* ZYLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYLocationManager.h; sourceTree = "<group>"; };
+		480013F81D37A63000D443C1 /* ZYLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYLocationManager.m; sourceTree = "<group>"; };
+		480013FA1D37A78D00D443C1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				480013FB1D37A78D00D443C1 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +48,7 @@
 		480013D31D37A48E00D443C1 = {
 			isa = PBXGroup;
 			children = (
+				480013FA1D37A78D00D443C1 /* CoreLocation.framework */,
 				480013DE1D37A48E00D443C1 /* ZYLocationManager */,
 				480013DD1D37A48E00D443C1 /* Products */,
 			);
@@ -58,6 +65,7 @@
 		480013DE1D37A48E00D443C1 /* ZYLocationManager */ = {
 			isa = PBXGroup;
 			children = (
+				480013F61D37A57200D443C1 /* Classes */,
 				480013E21D37A48E00D443C1 /* AppDelegate.h */,
 				480013E31D37A48E00D443C1 /* AppDelegate.m */,
 				480013E51D37A48E00D443C1 /* ViewController.h */,
@@ -77,6 +85,15 @@
 				480013E01D37A48E00D443C1 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		480013F61D37A57200D443C1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				480013F71D37A63000D443C1 /* ZYLocationManager.h */,
+				480013F81D37A63000D443C1 /* ZYLocationManager.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				480013E71D37A48E00D443C1 /* ViewController.m in Sources */,
+				480013F91D37A63000D443C1 /* ZYLocationManager.m in Sources */,
 				480013E41D37A48E00D443C1 /* AppDelegate.m in Sources */,
 				480013E11D37A48E00D443C1 /* main.m in Sources */,
 			);
@@ -265,6 +283,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZYLocationManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lzy.ZYLocationManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -276,6 +295,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZYLocationManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lzy.ZYLocationManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";

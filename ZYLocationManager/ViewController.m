@@ -19,14 +19,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
     [self queryLocation];
 }
 
 - (void)queryLocation {
-    ZYLocationManager *zyLocationManager = [ZYLocationManager shareManager];
     __weak __typeof(self) weakSelf = self;
-    [zyLocationManager getLocationCoordinate:weakSelf complete:^(CLLocationCoordinate2D location, NSError *error) {
+    [[ZYLocationManager shareManager] getLocationCoordinate:weakSelf complete:^(CLLocationCoordinate2D location, NSError *error) {
         if (nil == error) {
             //do something
             NSLog(@"location :%f -- %f", location.latitude, location.longitude);

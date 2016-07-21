@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "ZYLocationManager.h"
 
-@interface ViewController ()
+@interface ViewController () <UIAlertViewDelegate>
 
 @end
 
@@ -17,7 +18,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    
+    [self queryLocation];
 }
+
+- (void)queryLocation {
+    ZYLocationManager *zyLocationManager = [ZYLocationManager shareManager];
+    __weak __typeof(self) weakSelf = self;
+    [zyLocationManager getLocationCoordinate:weakSelf complete:^(CLLocationCoordinate2D location, NSError *error) {
+        if (nil == error) {
+            //do something
+            NSLog(@"location :%f -- %f", location.latitude, location.longitude);
+        } else {
+            //verify authority
+            authorityBlock(error, weakSelf);
+        }
+    }];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == alertView.firstOtherButtonIndex) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+    } else if (buttonIndex == alertView.cancelButtonIndex) {
+        //tips
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

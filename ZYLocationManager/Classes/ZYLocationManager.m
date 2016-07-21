@@ -160,7 +160,7 @@ const void(^authorityBlock)(NSError *, id<UIAlertViewDelegate>) = ^(NSError *err
 }
 
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error {
-    //无权限错误，删Block, 不重试, 等业务重新请求
+    //无权限错误，删Block，不重试, 等业务重新请求
     //有权限错误，不删Block，重试(发起者释放前), 成功则删除Block
     [self stopMapLocation];
     BOOL isNoAuthority = [self isNoAuthorityError:error];

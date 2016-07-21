@@ -17,6 +17,8 @@ ZYLocationManager make requesting location information base on MKMapKit any time
 #**Summary：**  
 ZYLocationManager工作基于单例，但它支持多个发起者多个请求同时处理，同时反馈。
 
+<br>
+<br>
 
 #**Usage：**  
 使用ZYLocationManager单例对象发起地图定位信息请求，一般传入发起者controller引用：
@@ -25,8 +27,7 @@ __weak __typeof(self) weakSelf = self;
 [[ZYLocationManager shareManager] getLocationCoordinate:weakSelf complete:^(CLLocationCoordinate2D location, NSError *error) {
     //do something
 }];
-```
-<br>
+```  
 
 利用block携带的参数信息:
 ```objc

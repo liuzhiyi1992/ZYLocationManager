@@ -17,6 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+//    [UIWindow makes]
+    [[UIApplication sharedApplication].windows.firstObject makeKeyAndVisible];
+    NSLog(@"");
     return YES;
 }
 

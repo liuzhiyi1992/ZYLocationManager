@@ -14,7 +14,6 @@
 		480013EC1D37A48E00D443C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 480013EB1D37A48E00D443C1 /* Assets.xcassets */; };
 		480013EF1D37A48E00D443C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 480013ED1D37A48E00D443C1 /* LaunchScreen.storyboard */; };
 		480013F91D37A63000D443C1 /* ZYLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 480013F81D37A63000D443C1 /* ZYLocationManager.m */; };
-		480013FB1D37A78D00D443C1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 480013FA1D37A78D00D443C1 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +29,6 @@
 		480013F01D37A48E00D443C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		480013F71D37A63000D443C1 /* ZYLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYLocationManager.h; sourceTree = "<group>"; };
 		480013F81D37A63000D443C1 /* ZYLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYLocationManager.m; sourceTree = "<group>"; };
-		480013FA1D37A78D00D443C1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +36,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				480013FB1D37A78D00D443C1 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,7 +45,6 @@
 		480013D31D37A48E00D443C1 = {
 			isa = PBXGroup;
 			children = (
-				480013FA1D37A78D00D443C1 /* CoreLocation.framework */,
 				480013DE1D37A48E00D443C1 /* ZYLocationManager */,
 				480013DD1D37A48E00D443C1 /* Products */,
 			);
@@ -214,7 +210,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Haodong Qiu (G6BMKCT4W5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Haodong Qiu (G6BMKCT4W5)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -258,7 +255,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Haodong Qiu (G6BMKCT4W5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Haodong Qiu (G6BMKCT4W5)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -285,7 +283,7 @@
 				INFOPLIST_FILE = ZYLocationManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lzy.ZYLocationManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qiuhaodong.sport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -297,7 +295,7 @@
 				INFOPLIST_FILE = ZYLocationManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lzy.ZYLocationManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qiuhaodong.sport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -321,6 +319,7 @@
 				480013F51D37A48E00D443C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

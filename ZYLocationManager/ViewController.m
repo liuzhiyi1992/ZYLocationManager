@@ -27,7 +27,17 @@
     [[ZYLocationManager shareManager] getLocationCoordinate:weakSelf complete:^(CLLocationCoordinate2D location, NSError *error) {
         if (nil == error) {
             //do something
-            NSLog(@"location :%f -- %f", location.latitude, location.longitude);
+            NSLog(@"\nlocation :%f -- %f", location.latitude, location.longitude);
+        } else {
+            //verify authority
+            authorityBlock(error, weakSelf);
+        }
+    }];
+    
+    [[ZYLocationManager shareManager] getCity:weakSelf complete:^(NSString *city, CLLocationCoordinate2D location, NSError *error) {
+        if (nil == error) {
+            //do something
+            NSLog(@"\ncity : %@  \nlocation :%f -- %f", city, location.latitude, location.longitude);
         } else {
             //verify authority
             authorityBlock(error, weakSelf);

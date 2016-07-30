@@ -10,6 +10,7 @@
 
 static ZYLocationManager *_mkLocationManager = nil;
 CGFloat const QUERY_LOCATION_RETRY_DELAY = 1;
+NSString const * CITY_STRING_DEFAULT = @"无城市信息";
 
 @interface ZYLocationManager() <MKMapViewDelegate, CLLocationManagerDelegate, UIAlertViewDelegate>
 @property (strong, nonatomic) CLLocationManager *clLocationManager;
@@ -87,7 +88,7 @@ const void(^authorityBlock)(NSError *, id<UIAlertViewDelegate>) = ^(NSError *err
 }
 
 - (void)getCity:(id)sponsor complete:(CityCompleteBlock)completeBlock {
-    [self.cityCompleteDictionary setObject:completeBlock forKey:sponsor];
+    [self.cityCompleteDictionary setObject:completeBlock forKey:[sponsor description]];
     [self queryMapLocation];
 }
 
@@ -99,7 +100,8 @@ const void(^authorityBlock)(NSError *, id<UIAlertViewDelegate>) = ^(NSError *err
     self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
     _mapView.delegate = self;
     [_mapView setShowsUserLocation:YES];
-    [[UIApplication sharedApplication].keyWindow addSubview:_mapView];
+    UIWindow *containerWindow = [UIApplication sharedApplication].keyWindow != nil ? [UIApplication sharedApplication].keyWindow : [UIApplication sharedApplication].windows.firstObject;
+    [containerWindow addSubview:_mapView];
 }
 
 - (void)stopMapLocation {
@@ -147,9 +149,9 @@ const void(^authorityBlock)(NSError *, id<UIAlertViewDelegate>) = ^(NSError *err
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-    //这里考虑做location的归档
-    //todo CLGeocoder解析坐标
     [self stopMapLocation];
+    
+    //Location
     CLLocationCoordinate2D coordinate2D = userLocation.location.coordinate;
     for (LocationCompleteBlock locationCompleteBlock in [_locationCompleteDictionary allValues]) {
         if (locationCompleteBlock) {
@@ -157,6 +159,22 @@ const void(^authorityBlock)(NSError *, id<UIAlertViewDelegate>) = ^(NSError *err
             [self removeObject:locationCompleteBlock FromDict:_locationCompleteDictionary];
         }
     }
+    
+    //City
+    __block NSString *city = [NSString stringWithFormat:@"%@", CITY_STRING_DEFAULT];
+    CLGeocoder *clGeocoder = [[CLGeocoder alloc] init];
+    [clGeocoder reverseGeocodeLocation:userLocation.location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        CLPlacemark *placeMark = placemarks.firstObject;
+        if (nil != placeMark) {
+            city =  placeMark.locality;
+        }
+        for (CityCompleteBlock cityCompleteBlock in [_cityCompleteDictionary allValues]) {
+            if (cityCompleteBlock) {
+                cityCompleteBlock(city, coordinate2D, nil);
+                [self removeObject:cityCompleteBlock FromDict:_cityCompleteDictionary];
+            }
+        }
+    }];
 }
 
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error {

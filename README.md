@@ -22,7 +22,6 @@ ZYLocationManager工作基于单例，但它支持多个发起者多个请求同
 
 #**Usage：**  
 ```- (void)getLocationCoordinate:(id)sponsor complete:(LocationCompleteBlock)completeBlock;```  
-
 ```- (void)getCity:(id)sponsor complete:(CityCompleteBlock)completeBlock;```  
 
 使用ZYLocationManager单例对象发起地图定位信息请求，一般传入发起者controller引用：

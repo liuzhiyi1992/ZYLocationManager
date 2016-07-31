@@ -15,7 +15,7 @@ ZYLocationManager make requesting location information base on MKMapKit any time
 
 
 #**Summary：**  
-ZYLocationManager工作基于单例，但它支持多个发起者多个请求同时处理，同时反馈。
+ZYLocationManager工作基于单例，但它支持多个发起者多个请求同时处理，同时反馈，失败重试。
 
 <br>
 <br>

@@ -123,7 +123,8 @@
 				TargetAttributes = {
 					480013DB1D37A48E00D443C1 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = H3UP79P5WR;
+						DevelopmentTeam = 82KQAUTE69;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -210,10 +211,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Haodong Qiu (G6BMKCT4W5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Haodong Qiu (G6BMKCT4W5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhiyi liu (RR6K7Q4JYR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhiyi liu (RR6K7Q4JYR)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = H3UP79P5WR;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -233,6 +235,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "1a8ed13b-ca66-4664-aede-60d9dd71a101";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -255,10 +258,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Haodong Qiu (G6BMKCT4W5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Haodong Qiu (G6BMKCT4W5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhiyi liu (RR6K7Q4JYR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhiyi liu (RR6K7Q4JYR)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = H3UP79P5WR;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -271,6 +275,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "1a8ed13b-ca66-4664-aede-60d9dd71a101";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -280,11 +285,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhiyi liu (RR6K7Q4JYR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhiyi liu (RR6K7Q4JYR)";
+				DEVELOPMENT_TEAM = 82KQAUTE69;
 				INFOPLIST_FILE = ZYLocationManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.qiuhaodong.sport;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lzy.ZYLocationManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3e4bca09-57d4-443b-a2b2-17ac7f9aa2a4";
+				PROVISIONING_PROFILE_SPECIFIER = SpeedFreezingVideo;
 			};
 			name = Debug;
 		};
@@ -292,11 +302,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhiyi liu (RR6K7Q4JYR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhiyi liu (RR6K7Q4JYR)";
+				DEVELOPMENT_TEAM = 82KQAUTE69;
 				INFOPLIST_FILE = ZYLocationManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.qiuhaodong.sport;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lzy.ZYLocationManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3e4bca09-57d4-443b-a2b2-17ac7f9aa2a4";
+				PROVISIONING_PROFILE_SPECIFIER = SpeedFreezingVideo;
 			};
 			name = Release;
 		};

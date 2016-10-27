@@ -10,7 +10,7 @@
 
 static ZYLocationManager *_mkLocationManager = nil;
 CGFloat const QUERY_LOCATION_RETRY_DELAY = 1;
-NSString const * CITY_STRING_DEFAULT = @"无城市信息";
+NSString const * CITY_STRING_DEFAULT = @"模拟器环境或无城市信息";
 
 @interface ZYLocationManager() <MKMapViewDelegate, CLLocationManagerDelegate, UIAlertViewDelegate>
 @property (strong, nonatomic) CLLocationManager *clLocationManager;

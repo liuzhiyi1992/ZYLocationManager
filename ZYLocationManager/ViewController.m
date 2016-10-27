@@ -17,8 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
     [self queryLocation];
 }
 
@@ -27,7 +25,7 @@
     [[ZYLocationManager shareManager] getLocationCoordinate:weakSelf complete:^(CLLocationCoordinate2D location, NSError *error) {
         if (nil == error) {
             //do something
-            NSLog(@"\nlocation :%f -- %f", location.latitude, location.longitude);
+            NSLog(@"\n\nlocation - \nlo:%f    la:%f\n", location.latitude, location.longitude);
         } else {
             //verify authority
             authorityBlock(error, weakSelf);
@@ -37,7 +35,7 @@
     [[ZYLocationManager shareManager] getCity:weakSelf complete:^(NSString *city, CLLocationCoordinate2D location, NSError *error) {
         if (nil == error) {
             //do something
-            NSLog(@"\ncity : %@  \nlocation :%f -- %f", city, location.latitude, location.longitude);
+            NSLog(@"\n\ncity : %@  \nlocation - \nlo:%f    la:%f\n", city, location.latitude, location.longitude);
         } else {
             //verify authority
             authorityBlock(error, weakSelf);
@@ -53,10 +51,8 @@
     }
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 @end

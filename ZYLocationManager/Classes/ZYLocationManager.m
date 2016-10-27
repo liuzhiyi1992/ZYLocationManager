@@ -79,7 +79,7 @@ const void(^authorityBlock)(NSError *, id<UIAlertViewDelegate>) = ^(NSError *err
     _clLocationManager.delegate = self;
     _clLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
     if ([_clLocationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-        [_clLocationManager requestWhenInUseAuthorization];
+        [_clLocationManager performSelector:@selector(requestWhenInUseAuthorization)];
     }
 }
 

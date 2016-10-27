@@ -41,8 +41,9 @@ const void(^authorityBlock)(NSError *, id<UIAlertViewDelegate>) = ^(NSError *err
 };
 
 
-@implementation ZYLocationManager
 
+
+@implementation ZYLocationManager
 + (ZYLocationManager *)shareManager {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -92,7 +93,9 @@ const void(^authorityBlock)(NSError *, id<UIAlertViewDelegate>) = ^(NSError *err
     [self queryMapLocation];
 }
 
-//单次请求地理位置
+/**
+ 单次请求地理位置
+ */
 - (void)queryMapLocation {
     if (_mapView != nil) {
         self.mapView = nil;
@@ -150,7 +153,6 @@ const void(^authorityBlock)(NSError *, id<UIAlertViewDelegate>) = ^(NSError *err
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
     [self stopMapLocation];
-    
     //Location
     CLLocationCoordinate2D coordinate2D = userLocation.location.coordinate;
     for (LocationCompleteBlock locationCompleteBlock in [_locationCompleteDictionary allValues]) {
@@ -159,7 +161,6 @@ const void(^authorityBlock)(NSError *, id<UIAlertViewDelegate>) = ^(NSError *err
             [self removeObject:locationCompleteBlock FromDict:_locationCompleteDictionary];
         }
     }
-    
     //City
     __block NSString *city = [NSString stringWithFormat:@"%@", CITY_STRING_DEFAULT];
     CLGeocoder *clGeocoder = [[CLGeocoder alloc] init];
@@ -177,9 +178,12 @@ const void(^authorityBlock)(NSError *, id<UIAlertViewDelegate>) = ^(NSError *err
     }];
 }
 
+
+/**
+ 无权限错误，删Block，不重试, 等业务重新请求
+ 有权限错误，不删Block，重试(发起者释放前), 成功则删除Block
+ */
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error {
-    //无权限错误，删Block，不重试, 等业务重新请求
-    //有权限错误，不删Block，重试(发起者释放前), 成功则删除Block
     [self stopMapLocation];
     BOOL isNoAuthority = [self isNoAuthorityError:error];
     //location

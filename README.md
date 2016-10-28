@@ -7,12 +7,18 @@ ZYLocationManager make requesting location information base on MKMapKit any time
 </h5>
 </h1>
 <p align="center">
-
+<img src="https://img.shields.io/badge/pod-v0.2.0-blue.svg" />
+<img src="https://img.shields.io/badge/license-MIT-brightgreen.svg" />
+</p>
 
 </p>
 <br>
 <br>
-
+#CocoaPods  
+```
+pod 'ZYLocationManager', '~> 0.2.0'
+``` 
+<br>
 
 #**Summary：**  
 ZYLocationManager工作基于单例，但它支持多个发起者多个请求同时处理，同时反馈，失败重试。

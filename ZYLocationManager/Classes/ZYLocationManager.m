@@ -40,9 +40,6 @@ const void(^authorityBlock)(NSError *, id<UIAlertViewDelegate>) = ^(NSError *err
     }
 };
 
-
-
-
 @implementation ZYLocationManager
 + (ZYLocationManager *)shareManager {
     static dispatch_once_t onceToken;
@@ -79,7 +76,7 @@ const void(^authorityBlock)(NSError *, id<UIAlertViewDelegate>) = ^(NSError *err
     _clLocationManager.delegate = self;
     _clLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
     if ([_clLocationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-        [_clLocationManager performSelector:@selector(requestWhenInUseAuthorization)];
+        [_clLocationManager requestWhenInUseAuthorization];
     }
 }
 
@@ -133,14 +130,14 @@ const void(^authorityBlock)(NSError *, id<UIAlertViewDelegate>) = ^(NSError *err
         case kCLAuthorizationStatusAuthorized:
             break;
         case kCLAuthorizationStatusNotDetermined:
-            if ([_clLocationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+            if ([_clLocationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
                 [_clLocationManager requestWhenInUseAuthorization];
             }
             break;
         case kCLAuthorizationStatusDenied:
             break;
         case kCLAuthorizationStatusRestricted:
-            if ([_clLocationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+            if ([_clLocationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
                 [_clLocationManager requestWhenInUseAuthorization];
             }
             break;
@@ -177,7 +174,6 @@ const void(^authorityBlock)(NSError *, id<UIAlertViewDelegate>) = ^(NSError *err
         }
     }];
 }
-
 
 /**
  无权限错误，删Block，不重试, 等业务重新请求

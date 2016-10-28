@@ -7,7 +7,7 @@ ZYLocationManager make requesting location information base on MKMapKit any time
 </h5>
 </h1>
 <p align="center">
-<img src="https://img.shields.io/badge/pod-v0.2.0-blue.svg" />
+<img src="https://img.shields.io/badge/pod-v0.3.0-blue.svg" />
 <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg" />
 </p>
 
@@ -16,7 +16,7 @@ ZYLocationManager make requesting location information base on MKMapKit any time
 <br>
 #CocoaPods  
 ```
-pod 'ZYLocationManager', '~> 0.2.0'
+pod 'ZYLocationManager', '~> 0.3.0'
 ``` 
 <br>
 
